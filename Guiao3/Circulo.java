@@ -1,4 +1,3 @@
-package POO.Guiao3;
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -8,11 +7,10 @@ public class Circulo{
     private double y;
     private double raio;
 
-
     public Circulo(){
-        this.x = 0;
-        this.y = 0;
-        this.raio = 0;
+        this.x = 0.0;
+        this.y = 0.0;
+        this.raio = 0.0;
     }
 
     public Circulo(int cx, int cy, int r){
@@ -72,11 +70,11 @@ public class Circulo{
     }
 
     public double areaCirculo(){
-        return Math.PI*this.raio*this.raio;
+        return Math.PI*Math.pow(this.getR(),2);
     }
 
     public double perimCirculo(){
-        return 2*Math.PI*this.raio;
+        return 2*Math.PI*this.getR();
     }
 
     public static void main(String [] argv){
@@ -86,10 +84,12 @@ public class Circulo{
         Circulo c3 = new Circulo(2,5,3);
 
         double area = c2.areaCirculo();
-        System.out.println("A area do circulo 2 é: "+area);
+        String areaFormat = String.format("%.2f",area);
+        System.out.println("A area do circulo 2 é: "+areaFormat);
         
         double perim = c3.perimCirculo();
-        System.out.println("O perimetro do circulo 3 é: "+perim);
+        String perimFormat = String.format("%.2f",perim);
+        System.out.println("O perimetro do circulo 3 é: "+perimFormat);
 
     }
 
