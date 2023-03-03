@@ -235,13 +235,74 @@ public class Exercicio1{
 
         for(int i=0;i<matriz.length;i++){
 
+            System.out.println("");
+
             for(int j=0; j<matriz[i].length;j++){
 
-                System.out.println(matriz[i][j]+" ");
+                System.out.print(matriz[i][j]+" ");
 
             }
 
         }
+
+        System.out.println("");
+
+    }
+
+    public static int[][] matrixSum(int [][] matrix1, int [][] matrix2){ // Assumir que as matrizes tem o mesmo tamanho
+
+        int size = matrix1.length;
+        int[][] matrixSum = new int[size][size];
+
+        for(int i=0;i<matrix1.length;i++){
+
+            for(int j=0; j<matrix1[i].length;j++){
+
+                matrixSum[i][j] = matrix1[i][j]+matrix2[i][j];
+
+            }
+
+        }
+
+        return matrixSum;
+
+    }
+
+    public static boolean equalsMatrix(int [][] matrix1, int [][] matrix2){
+
+        boolean equals = false;
+
+        if(matrix1.length == matrix2.length){
+
+            for(int i=0;i<matrix1.length;i++){
+    
+                for(int j=0; j<matrix1[i].length;j++){
+    
+                    equals = matrix1[i][j] == matrix2[i][j];
+    
+                }
+    
+            }
+
+        }
+
+        return equals;
+
+    }
+
+    public static int[][] matrizOposta(int [][] matriz){
+
+        for(int i=0;i<matriz.length;i++){
+
+            for(int j=0; j<matriz[i].length;j++){
+
+                matriz[i][j] *= (-1);
+
+            }
+
+        }
+
+        return matriz;
 
     }
 
@@ -336,15 +397,40 @@ public class Exercicio1{
         System.out.println("A string "+str+" aparece no array "+count+" vezes.");
         */
         // Exercicio 5.a)
-
+        
         System.out.println("Insira o numero de linhas: ");
         int rows = sc.nextInt();
-        System.out.println("INsira o numero de colunas: ");
+        System.out.println("Insira o numero de colunas: ");
         int cols = sc.nextInt();
         int[][] matrizNums = lerMatriz(rows,cols);
         ex1.printaMatriz(matrizNums);
-       
+        
+        // Exercicio 5.b)
+        /* 
+        System.out.println("Insira o numero de linhas: ");
+        int rows1 = sc.nextInt();
+        System.out.println("Insira o numero de colunas: ");
+        int cols1 = sc.nextInt();
+        int[][] matrix1 = lerMatriz(rows1,cols1);
 
+        System.out.println("Insira o numero de linhas: ");
+        int rows2 = sc.nextInt();
+        System.out.println("Insira o numero de colunas: ");
+        int cols2 = sc.nextInt();
+        int[][] matrix2 = lerMatriz(rows2,cols2);
+        
+        int[][] matrixSum = matrixSum(matrix1, matrix2);
+        ex1.printaMatriz(matrixSum);
+        */
+        // Exercicio 5.c)
+        /* 
+        boolean igual = equalsMatrix(matrix1, matrix2);
+        System.out.println(igual);
+        */
+        // Exercicio 5.d)
+
+        int[][] matrizOposta = matrizOposta(matrizNums);
+        ex1.printaMatriz(matrizOposta);
 
         sc.close();
 
